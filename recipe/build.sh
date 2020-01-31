@@ -58,6 +58,7 @@ python ./configure \
   --with-blas-lib=libblas${SHLIB_EXT} \
   --with-lapack-lib=liblapack${SHLIB_EXT} \
   --with-hwloc=0 \
+  --with-hdf5=1 \
   --with-hypre=1 \
   --with-metis=1 \
   --with-mpi=1 \

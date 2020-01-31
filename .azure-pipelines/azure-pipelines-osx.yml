@@ -16,7 +16,8 @@ jobs:
       osx_mpiopenmpi:
         CONFIG: osx_mpiopenmpi
         UPLOAD_PACKAGES: True
-
+  variables:
+    - group: anaconda
   steps:
   # TODO: Fast finish on azure pipelines?
   - script: |

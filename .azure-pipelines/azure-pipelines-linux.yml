@@ -7,8 +7,6 @@ jobs:
   pool:
     vmImage: ubuntu-16.04
   timeoutInMinutes: 360
-  variables:
-    group: anaconda
   strategy:
     maxParallel: 8
     matrix:
@@ -34,5 +32,7 @@ jobs:
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
         .scripts/run_docker_build.sh
     displayName: Run docker build
+    variables:
+      group: my-variable-group
     env:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)

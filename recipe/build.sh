@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 export PETSC_DIR=$SRC_DIR
-export PETSC_ARCH=arch-conda-c-opt
+export PETSC_ARCH=arch-conda-c-debug
 
 unset F90
 unset F77
@@ -54,7 +54,7 @@ python ./configure \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
-  --with-debugging=0 \
+  --with-debugging=1 \
   --with-blas-lib=libblas${SHLIB_EXT} \
   --with-lapack-lib=liblapack${SHLIB_EXT} \
   --with-hwloc=0 \

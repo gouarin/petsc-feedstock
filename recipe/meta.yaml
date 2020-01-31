@@ -49,6 +49,7 @@ requirements:
     - suitesparse
   run:
     - {{ mpi }}
+    - hdf5
     - hypre
     - metis
     - parmetis

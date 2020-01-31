@@ -33,6 +33,6 @@ jobs:
         .scripts/run_docker_build.sh
     displayName: Run docker build
     variables:
-      group: my-variable-group
+      group: anaconda
     env:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)

@@ -3,5 +3,7 @@
 # -*- mode: yaml -*-
 
 jobs:
+  - variables:
+      - group: anaconda
   - template: ./.azure-pipelines/azure-pipelines-linux.yml
   - template: ./.azure-pipelines/azure-pipelines-osx.yml

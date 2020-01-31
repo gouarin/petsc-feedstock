@@ -7,8 +7,6 @@ jobs:
   pool:
     vmImage: macOS-10.13
   timeoutInMinutes: 360
-  variables:
-    group: anaconda  
   strategy:
     maxParallel: 8
     matrix:

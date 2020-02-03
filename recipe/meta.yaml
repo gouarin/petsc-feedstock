@@ -49,7 +49,7 @@ requirements:
     - suitesparse
   run:
     - {{ mpi }}
-    - hdf5
+    - hdf5=1.10.6=mpi_openmpi_hac320be_0
     - hypre
     - metis
     - parmetis

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 export PETSC_DIR=$SRC_DIR
-export PETSC_ARCH=arch-conda-c-opt
+export PETSC_ARCH=arch-conda-c-debug
 
 unset F90
 unset F77
@@ -48,13 +48,10 @@ python ./configure \
   FFLAGS="$FFLAGS" \
   LDFLAGS="$LDFLAGS" \
   LIBS="$LIBS" \
-  --COPTFLAGS=-O3 \
-  --CXXOPTFLAGS=-O3 \
-  --FOPTFLAGS=-O3 \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
-  --with-debugging=0 \
+  --with-debugging=1 \
   --with-blas-lib=libblas${SHLIB_EXT} \
   --with-lapack-lib=liblapack${SHLIB_EXT} \
   --with-hwloc=0 \
@@ -94,7 +91,7 @@ sedinplace() {
 # Remove abspath of ${BUILD_PREFIX}/bin/python
 sedinplace "s%${BUILD_PREFIX}/bin/python%python%g" $PETSC_ARCH/include/petscconf.h
 sedinplace "s%${BUILD_PREFIX}/bin/python%python%g" $PETSC_ARCH/lib/petsc/conf/petscvariables
-sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-opt.py
+sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-debug.py
 
 # Replace abspath of ${PETSC_DIR} and ${BUILD_PREFIX} with ${PREFIX}
 for path in $PETSC_DIR $BUILD_PREFIX; do
